@@ -1,0 +1,19 @@
+[package]
+name = "xorcrypt"
+version = "1.0.0"
+edition = "2021"
+authors = ["Fábián Varga"]
+description = "File encryption tool."
+license-file = "LICENSE"
+
+[dependencies]
+clap = { version = "4.1.4", features = ["derive"] }
+rpassword = "7.2.0"
+spinoff = "0.7.0"
+
+[profile.release]
+strip = true
+opt-level = "z"
+lto = true
+codegen-units = 1
+panic = "abort"
